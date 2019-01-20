@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  caregiver_id: one
+  services_id: one
+
+two:
+  caregiver_id: two
+  services_id: two
