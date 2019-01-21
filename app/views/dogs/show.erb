@@ -1,0 +1,15 @@
+<h1> Our dog(s)!!! </h1>
+
+<ul>
+  <li>Name:..<%= @dog.name %></li>
+  <li>Age:..<%= @dog.age %></li>
+  <li>Size:..<%= @dog.size %></li>
+  <li>Veterinarian Name:..<%= @dog.vet_name %></li>
+  <li>Food:..<%= @dog.food_name %></li>
+  <li>Owner:..<%=@dog.user.full_name %></li>
+
+  <img src=<%= @dog.img_url%> >
+
+</ul>
+<%= link_to "update", edit_dog_path(@dog) %>
+<%= button_to "delete", @dog, method: 'delete' %>

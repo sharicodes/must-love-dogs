@@ -1,0 +1,20 @@
+<h1>Our Valued Client:</h1>
+
+<ul>
+  <li>Name:<%= @user.full_name %></li>
+  <li>Email:<%= @user.email %></li>
+  <li>Phone Number:<%= @user.phone_number %></li>
+  <li>Neighborhood><%= @user.neighborhood %></li>
+
+
+  <%= link_to "update", edit_user_path(@user) %>
+  <%= button_to "delete", @user, method: 'delete' %>
+</ul>
+<p>
+<h2> This Client's Dog(s)</h2>
+<ul>
+    <% @dogs.each do |dog| %>
+    <b>Dog</b>:<%=link_to dog.name, dog_path(dog) %><br>
+    <% end %>
+</ul>
+</p>

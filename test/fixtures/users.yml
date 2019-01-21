@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  phone_number: MyString
+  neighborhood: MyString
+
+two:
+  full_name: MyString
+  phone_number: MyString
+  neighborhood: MyString
