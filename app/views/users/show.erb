@@ -5,16 +5,29 @@
   <li>Email:<%= @user.email %></li>
   <li>Phone Number:<%= @user.phone_number %></li>
   <li>Neighborhood><%= @user.neighborhood %></li>
+  <li>User ID:<%= @user.id %></li>
+
 
 
   <%= link_to "update", edit_user_path(@user) %>
   <%= button_to "delete", @user, method: 'delete' %>
+
+
 </ul>
+
+
+<p> Add A New Dog for this client: </p>
+<%=link_to "add new dog", new_dog_path(@dog)%>
+
+
+
 <p>
-<h2> This Client's Dog(s)</h2>
+<h2> This Client's Dog(s):</h2>
 <ul>
     <% @dogs.each do |dog| %>
     <b>Dog</b>:<%=link_to dog.name, dog_path(dog) %><br>
+<h4> This Dog's Appointments:</h4>
     <% end %>
 </ul>
+
 </p>

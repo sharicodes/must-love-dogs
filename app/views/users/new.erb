@@ -14,5 +14,22 @@
   <%= f.phone_field :phone_number %><br/>
   <%= f.label :neighborhood %>
   <%= f.text_field :neighborhood %><br/>
+
+<p> Enter Your Dog's Information:<br>
+    <%= f.fields_for :dogs do |d| %>
+
+      <%= d.label :name %>(your dog's name)
+      <%= d.text_field :name %><br/>
+      <%= d.label :age %>
+      <%= d.text_field :age %><br/>
+      <%= d.label :size %>...small, medium, or large
+      <%= d.text_field :size %><br/>
+      <%= d.label :vet_name %>
+      <%= d.text_field :vet_name %><br/>
+      <%= d.label :food_name %>
+      <%= d.text_field :food_name %><br/>
+      <%= d.label :picture %>...insert link to your dog's photo
+      <%= d.url_field :img_url %><br/>
+      <% end %> </p>
   <%= f.submit %>
 <% end %>

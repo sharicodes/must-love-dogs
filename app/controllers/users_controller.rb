@@ -9,11 +9,14 @@ class UsersController < ApplicationController
     end
 
     def new
+
       @user = User.new
+      @user.dogs.build
 
     end
 
     def create
+    
       @user = User.create(user_params)
         if @user.valid?
             redirect_to user_path(@user)
@@ -50,7 +53,11 @@ class UsersController < ApplicationController
 
     private
     def user_params
-      params.require(:user).permit(:full_name, :email, :phone_number, :neighborhood)
+      params.require(:user).permit(:full_name, :email, :phone_number, :neighborhood,
+      dogs_attributes:[
+        :name, :age, :size, :vet_name, :food_name, :img_url
+        ]
+      )
     end
 
  end

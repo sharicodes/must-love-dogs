@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :dogs, dependent: :destroy
+  accepts_nested_attributes_for :dogs
   has_many :appointments, through: :dogs
 
   validates :full_name, presence: true

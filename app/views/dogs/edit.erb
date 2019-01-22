@@ -3,14 +3,14 @@
   <%= f.label :name %>
   <%= f.text_field :name %><br/>
   <%= f.label :age %>
-  <%= f.email_field :age %><br/>
+  <%= f.text_field :age %><br/>
   <%= f.label :size %>; small, medium, or large:
-  <%= f.number_field :size %><br/>
+  <%= f.text_field :size %><br/>
   <%= f.label :vet_name %>
   <%= f.text_field :vet_name %><br/>
   <%= f.label :food_name %>
   <%= f.text_field :food_name %><br/>
-  <%= f.label :picture %>;  picture link:
+  <%= f.label :picture %>...insert link to your dog's photo
   <%= f.url_field :img_url %><br/>
   <%= f.submit %>
 <% end %>
