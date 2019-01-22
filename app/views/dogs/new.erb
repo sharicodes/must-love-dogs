@@ -1,0 +1,24 @@
+<h1> Sign your dog up for Must Love Dogs Services</h1>
+<% if flash[:errors] %>
+  <% flash[:errors].each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
+
+<%= form_for @dog do |f| %>
+  <%= f.label :user_id %>
+  <%= f.text_field :user_id %><br/>
+  <%= f.label :name %>(your dog's name)
+  <%= f.text_field :name %><br/>
+  <%= f.label :age %>
+  <%= f.text_field :age %><br/>
+  <%= f.label :size %>...small, medium, or large
+  <%= f.text_field :size %><br/>
+  <%= f.label :vet_name %>
+  <%= f.text_field :vet_name %><br/>
+  <%= f.label :food_name %>
+  <%= f.text_field :food_name %><br/>
+  <%= f.label :picture %>...insert link to your dog's photo
+  <%= f.url_field :img_url %><br/>
+  <%= f.submit %>
+<% end %>

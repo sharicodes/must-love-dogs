@@ -1,0 +1,16 @@
+<h1> Update your dog's information</h1>
+<%= form_for @dog do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br/>
+  <%= f.label :age %>
+  <%= f.text_field :age %><br/>
+  <%= f.label :size %>; small, medium, or large:
+  <%= f.text_field :size %><br/>
+  <%= f.label :vet_name %>
+  <%= f.text_field :vet_name %><br/>
+  <%= f.label :food_name %>
+  <%= f.text_field :food_name %><br/>
+  <%= f.label :picture %>...insert link to your dog's photo
+  <%= f.url_field :img_url %><br/>
+  <%= f.submit %>
+<% end %>

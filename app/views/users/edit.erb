@@ -1,0 +1,14 @@
+<h1>Form to Edit Client Details</h1>
+
+    <%= form_for @user do |f| %>
+    <%= f.label :full_name, 'Name:' %>
+    <%= f.text_field :full_name %><br/>
+    <%= f.label :email, 'Email:' %>
+    <%= f.text_field :email %><br/>
+    <%= f.label :phone_number, 'Phone Number:' %>
+    <%= f.number_field :phone_number %><br/>
+    <%= f.label :neighborhood, 'Neighborhood' %>
+    <%= f.text_field :neighborhood %><br/>
+    <%= f.submit "Save Changes"%>
+
+    <% end %>

@@ -1,0 +1,10 @@
+<h1>All of the dogs- Woof!!! </h1>
+
+<ul>
+   <% @dogs.each do |d| %>
+   <li><%= link_to d.name, dog_path(d)  %>
+     <%= button_to "delete", @dog, method: 'delete' %>
+
+ </li><br>
+   <% end %>
+</ul>
