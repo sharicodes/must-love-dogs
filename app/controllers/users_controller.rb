@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     def show
       @user = User.find(params[:id])
       @dogs = @user.dogs.all
+      # @dogs = @appointment.dogs.all
     end
 
     def new
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
     end
 
     def create
-    
+
       @user = User.create(user_params)
         if @user.valid?
             redirect_to user_path(@user)
