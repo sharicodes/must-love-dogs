@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_205121) do
+ActiveRecord::Schema.define(version: 2019_01_20_233317) do
+
+  create_table "caregivers", force: :cascade do |t|
+    t.string "name"
+    t.string "neighborhood"
+    t.string "bio"
+    t.string "picture_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "careservices", force: :cascade do |t|
+    t.integer "caregiver_id"
+    t.integer "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["caregiver_id"], name: "index_careservices_on_caregiver_id"
+    t.index ["service_id"], name: "index_careservices_on_service_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
