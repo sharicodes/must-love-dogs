@@ -41,7 +41,7 @@ class CaregiversController < ApplicationController
   private
 
   def caregiver_params
-    params.require(:caregiver).permit(:name, :bio, :neighborhood, service_ids: [])
+    params.require(:caregiver).permit(:name, :bio, :neighborhood, service_id: [])
   end
 
 end

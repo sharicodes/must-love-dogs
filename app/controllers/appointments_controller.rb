@@ -5,13 +5,16 @@ class AppointmentsController < ApplicationController
 
     def show
       @appointment = Appointment.find(params[:id])
-      @dogs = @appointment.dogs.all
-      
+      # @dogs = @appointment.dogs.all
+
     end
 
     def new
       @appointment = Appointment.new
-
+        @dogs = Dog.all
+        @caregivers = Caregiver.all
+        @services = Service.all
+        @careservices = Careservice.all
     end
 
     def create
@@ -47,7 +50,7 @@ class AppointmentsController < ApplicationController
 
     private
     def appointment_params
-      params.require(:appointment).permit(:dog_id, :careserves_id)
+      params.require(:appointment).permit(:dog_id, :careservice_id, :service_id, :caregiver_id)
     end
 
   end

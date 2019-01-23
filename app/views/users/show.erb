@@ -1,11 +1,11 @@
 <h1>Our Valued Client:</h1>
 
 <ul>
-  <li>Name:<%= @user.full_name %></li>
-  <li>Email:<%= @user.email %></li>
-  <li>Phone Number:<%= @user.phone_number %></li>
-  <li>Neighborhood><%= @user.neighborhood %></li>
-  <li>User ID:<%= @user.id %></li>
+  <li>Name:  <%= @user.full_name %></li>
+  <li>Email:  <%= @user.email %></li>
+  <li>Phone Number:  <%=number_to_phone(@user.phone_number) %></li>
+  <li>Neighborhood:  <%= @user.neighborhood %></li>
+  <li>User ID:  <%= @user.id %></li>
 
 
 
@@ -25,7 +25,7 @@
 <h2> This Client's Dog(s):</h2>
 <ul>
     <% @dogs.each do |dog| %>
-    <b>Dog</b>:<%=link_to dog.name, dog_path(dog) %><br>
+    <b>Dog:  </b><%=link_to dog.name, dog_path(dog) %><br>
 <h4> This Dog's Appointments:</h4>
 
     <% end %>

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     def show
       @user = User.find(params[:id])
       @dogs = @user.dogs.all
-      # @dogs = @appointment.dogs.all
+      
     end
 
     def new

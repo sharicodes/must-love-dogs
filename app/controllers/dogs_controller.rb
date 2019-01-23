@@ -5,13 +5,14 @@ class DogsController < ApplicationController
 
     def show
       @dog = Dog.find(params[:id])
-      #@users = @dog.users.all
+      #@appointment = @dog.appointment
     end
 
     def new
       @dog = Dog.new
       @users = User.all
-    
+      #@appointments = Appointment.all
+
 
 
     end
@@ -49,7 +50,7 @@ class DogsController < ApplicationController
 
     private
     def dog_params
-      params.require(:dog).permit(:name, :age, :size, :vet_name, :food_name, :user_id, :img_url)
+      params.require(:dog).permit(:name, :age, :size, :vet_name, :food_name, :user_id, :img_url, :caregiver_id, :service_id)
     end
 
 end
