@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :services
   resources :caregivers
 
-  devise_for :admins
+  
   resources :appointments
   resources :dogs
   resources :users
