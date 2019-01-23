@@ -10,12 +10,12 @@
     <%= f.text_field :picture_url %><br>
   </div>
 
-    <div>
-      <% Service.all.each do |service| %>
-        <%= check_box_tag "caregiver[service_ids][]", service.id, f.object.services.include?(service) %>
-        <%= service.name %>
-      <% end %>
-    </div>
+  <div>
+    <% Service.all.each do |service| %>
+      <%= check_box_tag "caregiver[service_ids][]", service.id, f.object.services.include?(service) %>
+      <%= service.name %>
+    <% end %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
