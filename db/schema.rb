@@ -10,23 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_01_22_205121) do
-=======
-ActiveRecord::Schema.define(version: 2019_01_23_153103) do
->>>>>>> ec73225e898b02fd568c5855e26612aef8903f72
-
-  create_table "admins", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-  end
+ActiveRecord::Schema.define(version: 2019_01_23_223029) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "dog_id"
@@ -44,28 +28,6 @@ ActiveRecord::Schema.define(version: 2019_01_23_153103) do
     t.string "neighborhood"
     t.string "bio"
     t.string "picture_url"
-<<<<<<< HEAD
-=======
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "careservices", force: :cascade do |t|
-    t.integer "caregiver_id"
-    t.integer "service_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["caregiver_id"], name: "index_careservices_on_caregiver_id"
-    t.index ["service_id"], name: "index_careservices_on_service_id"
-  end
-
-  create_table "clients", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
->>>>>>> ec73225e898b02fd568c5855e26612aef8903f72
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -101,13 +63,6 @@ ActiveRecord::Schema.define(version: 2019_01_23_153103) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "services", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "full_name"
     t.integer "phone_number"
@@ -115,6 +70,8 @@ ActiveRecord::Schema.define(version: 2019_01_23_153103) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
+    t.string "username"
+    t.string "password_digest"
   end
 
 end

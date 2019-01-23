@@ -1,8 +1,8 @@
 class Caregiver < ApplicationRecord
   has_many :careservices, dependent: :destroy
   has_many :services, through: :careservices
-  has_many :dogs, through: :appointments
-  has_many :appointments
+
+  has_many :appointments, through: :careservices
 
   validates :name, presence: true
   validates :bio, presence: true
