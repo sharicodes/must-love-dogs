@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  # before_action :authorize, only: [:show, :new]
+
   def index
       @users = User.all
     end
@@ -6,7 +8,7 @@ class UsersController < ApplicationController
     def show
       @user = User.find(params[:id])
       @dogs = @user.dogs.all
-      
+
     end
 
     def new
@@ -54,7 +56,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-      params.require(:user).permit(:full_name, :email, :phone_number, :neighborhood,
+      params.require(:user).permit(:username, :password, :full_name, :email, :phone_number, :neighborhood,
       dogs_attributes:[
         :name, :age, :size, :vet_name, :food_name, :img_url
         ]

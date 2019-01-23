@@ -23,6 +23,10 @@
 
 <p>
 <h2> This Client's Dog(s):</h2>
+
+<p> Make a service appointment for your dog
+<%=link_to "make appointment", new_appointment_path(@user)%>
+
 <ul>
     <% @dogs.each do |dog| %>
     <b>Dog:  </b><%=link_to dog.name, dog_path(dog) %><br>

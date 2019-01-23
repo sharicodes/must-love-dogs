@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_01_23_153103) do
+=======
+ActiveRecord::Schema.define(version: 2019_01_23_223029) do
+>>>>>>> 10dcb104cdb9f217b7d179d3e7508f768d0bc03a
 
   create_table "appointments", force: :cascade do |t|
     t.integer "dog_id"
@@ -70,6 +74,8 @@ ActiveRecord::Schema.define(version: 2019_01_23_153103) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
+    t.string "username"
+    t.string "password_digest"
   end
 
 end
