@@ -11,5 +11,7 @@
   <img src=<%= @dog.img_url%> >
 
 </ul>
+<%= link_to "back to owner", user_path(@dog.user) %><br>
 <%= link_to "update", edit_dog_path(@dog) %>
+
 <%= button_to "delete", @dog, method: 'delete' %>

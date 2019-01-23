@@ -3,6 +3,7 @@
 <ul> Bio: <%=@caregiver.bio %> <br><br>
 Neighborhood: <%=@caregiver.neighborhood %> <br><br>
 <img src=<%=@caregiver.picture_url%>> <br></ul>
+
 Services You Provide:<br> <%@caregiver.services.each do |s| %>
 <%= s.name %> <br>
 <%end%>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  # resources :careservices
-  # resources :services
+  resources :careservices
+  resources :services
   resources :caregivers
 
   devise_for :admins
