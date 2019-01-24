@@ -1,29 +1,30 @@
 class AppointmentsController < ApplicationController
+
   def index
       @appointments = Appointment.all
     end
 
     def show
       @appointment = Appointment.find(params[:id])
-      # @dogs = @appointment.dogs.all
-
     end
 
     def new
       @appointment = Appointment.new
-      @dogs =Dog.find(params[:user_id])
-
-
+      id = session[:user_id]
+      @user = User.find_by(id: id)
+      @dogs = @user.dogs
+      @service = Service.first
+      @caregivers = @service.halfwalk_caregivers
     end
 
     def create
-      @appointment = Appointment.create(appointment_params)
-        if @appointment.valid?
-            redirect_to appointment_path(@appointment)
-        else
-        flash[:errors] = @appointment.errors.full_messages
-          redirect_to new_appointment_path
-        end
+      @appointment = Appointment.create(appointment_params(:dog_id, :caregiver_id, service_id: 1))
+      id = session[:user_id]
+      @user = User.find_by(id: id)
+      @dogs = @user.dogs
+      @service = Service.first
+      @caregivers = @service.halfwalk_caregivers
+      redirect_to user_path(@user)
     end
 
 
@@ -48,8 +49,8 @@ class AppointmentsController < ApplicationController
     end
 
     private
-    def appointment_params
-      params.require(:appointment).permit(:dog_id, :careservice_id)
+    def appointment_params(*args)
+      params.require(:appointment).permit(*args)
     end
 
   end

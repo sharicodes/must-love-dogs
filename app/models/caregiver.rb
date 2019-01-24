@@ -8,4 +8,5 @@ class Caregiver < ApplicationRecord
   validates :bio, presence: true
   validates :neighborhood, presence: true
 
+
 end

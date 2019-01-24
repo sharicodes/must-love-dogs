@@ -1,6 +1,6 @@
 class Appointment < ApplicationRecord
   belongs_to :dog
   belongs_to :careservice
-  # belongs_to :caregiver
-  # belongs_to :service
+  has_many :services, through: :careservice
+  has_many :caregivers, through: :careservice
 end
