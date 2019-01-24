@@ -8,12 +8,12 @@
 
 puts "deleting seeds"
 
-# Caregiver.destroy_all
-# Service.destroy_all
-# Careservice.destroy_all
-# Dog.destroy_all
-# User.destroy_all
-#Admin.destroy_all
+Caregiver.destroy_all
+Service.destroy_all
+Careservice.destroy_all
+Dog.destroy_all
+User.destroy_all
+# Admin.destroy_all
 
 
 
