@@ -6,8 +6,7 @@
 <% end %>
 
 <%= form_for @dog do |f| %>
-  <%= f.label :user_id %>
-  <%= f.text_field :user_id %><br/>
+  <%= f.hidden_field :user_id, :value => session[:user_id] %> 
   <%= f.label :name %>(your dog's name)
   <%= f.text_field :name %><br/>
   <%= f.label :age %>

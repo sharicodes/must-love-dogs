@@ -9,8 +9,16 @@
   <li>Owner:..<%=@dog.user.full_name %></li>
 
   <img src=<%= @dog.img_url%> >
+  </ul>
 
+<h2> Appointments </h2>
+<ul>
+  <% @appointments.each do |a| %>
+  <li><%= a.find_caregiver.name + " - " + a.find_service.name%> </li>
+  <% end %> 
 </ul>
+
+
 <%= link_to "back to owner", user_path(@dog.user) %><br>
 <%= link_to "update", edit_dog_path(@dog) %><br>
 <%= link_to "make a service appointment", new_appointment_path(@dog) %>
