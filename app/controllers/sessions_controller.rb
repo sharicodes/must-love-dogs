@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
   skip_before_action :authorize, only: [:login, :create]
 
+  def index
+  end 
+
   def login
   end
 
@@ -18,5 +21,5 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
   end
-  
+
 end

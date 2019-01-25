@@ -4,6 +4,7 @@ class Caregiver < ApplicationRecord
 
   has_many :appointments, through: :careservices
 
+
   validates :name, presence: true
   validates :bio, presence: true
   validates :neighborhood, presence: true

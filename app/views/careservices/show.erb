@@ -1,0 +1,6 @@
+<h1> Pick Your Caregiver </h1>
+
+<%= form_for :careservice do |f| %>
+  Select Your Prefered Caregiver: <%= f.collection_select :id, @caregivers, :id, :name %><br />
+  <%= f.submit "Select Your Caregiver"%>
+<% end %>

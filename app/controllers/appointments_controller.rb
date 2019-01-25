@@ -13,8 +13,8 @@ class AppointmentsController < ApplicationController
       id = session[:user_id]
       @user = User.find_by(id: id)
       @dogs = @user.dogs
-      @service = Service.first
-      @caregivers = @service.halfwalk_caregivers
+      byebug
+      # @careservice = params(:careservice_id)
     end
 
     def create

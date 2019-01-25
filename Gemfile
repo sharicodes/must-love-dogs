@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'therubyracer'
+gem 'less-rails-bootstrap'
+gem 'jquery-easing-rails'
 
 
 # Use Redis adapter to run Action Cable in production
