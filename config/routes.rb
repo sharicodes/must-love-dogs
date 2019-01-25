@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'startup/index'
   resources :careservices
-  resources :services
+  resources :services, only: [:show]
   resources :caregivers
 
 
