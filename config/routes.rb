@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'startup/index'
   resources :careservices
   resources :services
   resources :caregivers
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
     get '/login', to: "sessions#login", as: "login" # does this match REST? where does this go?
     # we need to create a session saying we are logged in
     post '/sessions', to: "sessions#create"
+    #get '/logout', to: "sessions#destroy"  as: "logout"
 
 
   end

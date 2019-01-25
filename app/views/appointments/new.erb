@@ -1,9 +1,3 @@
-<h1>Create a new 30M Walk for your dog!</h1>
+customer picks which dog they want the appointment for
 
-<%= form_for @appointment do |f| %>
-
-<%= f.collection_select :dog_id, @dogs, :id, :name %> <br>
-<%= f.collection_select :caregiver_id, @caregivers, :id, :name %> <br>
-
-<%=f.submit%>
-  <%end%>
+this will create the appointment and redirect to user show page

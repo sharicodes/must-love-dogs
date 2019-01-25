@@ -1,14 +1,104 @@
-<h1>Login</h1>
 
-<% if flash[:unauthenticated] %>
-  <p style="color:red;"><%= flash[:unauthenticated] %></p>
-<% end %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <title>Login</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-<%= form_tag("/sessions") do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color:  green;
+}
 
-  <%= submit_tag "Log IN!!!" %>
-<% end %>
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: left;
+  font-size: 10px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+  <body>
+
+
+<h3></h3>
+
+
+<br>
+<br>
+
+<h1>    Must Love dogs</h1>
+<h2>    We love your dog as much as you do!!</h2>
+<p></p>
+
+<div class="header">
+  <h3>Login</h3>
+  <% if flash[:unauthenticated] %>
+    <p style="color:red;"><%= flash[:unauthenticated] %></p>
+  <% end %>
+
+  <%= form_tag("/sessions") do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+
+    <%= submit_tag "Log in" %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">Dog Walking <br>30 min<br>
+</div>
+  <div class="column" style="background-color:#bbb;">Dog Walking<br>1 hour</div>
+  <div class="column" style="background-color:#ccc;">Dog Boarding</div>
+  <div class="column" style="background-color:#ddd;">Dog Transport</div>
+  <div class="column" style="background-color:#eee;">Dog Grooming</div>
+</div>
+
+<div class="footer">
+  <p>contact us: Shari @flatiron  or Gabbie @flatiron</p>
+</div>
+
+
+
+</body>
+</html>

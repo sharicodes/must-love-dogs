@@ -1,0 +1,52 @@
+<link rel=“stylesheet” href=“/assets/stylesheets/startup.scss”>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <link rel=“stylesheet” href=“/assets/stylesheets/index.css”>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<%= stylesheet_link_tag 'application' %>
+  <title>login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <h1>Login</h1>
+
+  <% if flash[:unauthenticated] %>
+    <p style="color:red;"><%= flash[:unauthenticated] %></p>
+  <% end %>
+
+  <%= form_tag("/sessions") do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+
+    <%= submit_tag "Log in" %>
+  <% end %>
+
+
+  <div class="container">
+  <div class="jumbotron">
+
+    <h1>Must Love Dogs</h1>
+    <p>We love your dogs as much as you do!!</p>
+  </div>
+  <p>This is some text.</p>
+  <p>This is another text.</p>
+</div>
+
+<div class="container-fluid">
+  <h1>My First Bootstrap Page</h1>
+  <p>This is some text.</p>
+</div>
+
+<button type="button" class="btn btn-primary">Primary</button>
+<h2> testing testing </h2>
+</body>
+</html>

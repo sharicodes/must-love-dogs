@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
-  #before_action :authorize, only: [:show, :new]
-=======
   before_action :authorize, only: [:show, :new]
->>>>>>> e869cffa3fc6e2c21d5d9d4d03866196c160886c
 
   def index
     @users = User.all
@@ -12,6 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @dogs = @user.dogs.all
+    # @appointments = @dogs
   end
 
   def new
@@ -44,6 +41,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to users_path
+    
   end
 
   def add_dog
