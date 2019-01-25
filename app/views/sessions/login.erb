@@ -16,7 +16,8 @@
 body {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  color:  green;
+  color:  seagreen;
+  font-size: 25px;
 }
 
 /* Style the header */
@@ -29,10 +30,12 @@ body {
 
 /* Create three equal columns that floats next to each other */
 .column {
-  float: left;
+  /*float: left;*/
   width: 20%;
   padding: 10px;
   height: 300px; /* Should be removed. Only for demonstration */
+  border: 2px solid green;
+  border-radius: 12px;
 }
 
 /* Clear floats after the columns */
@@ -46,8 +49,25 @@ body {
 .footer {
   background-color: #f1f1f1;
   padding: 10px;
-  text-align: center;
+  text-align: right;
+  font-size: 10px;
 }
+#box{
+    display: block;
+    margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+    height: 50%;
+    background:#f1f1f1;
+
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
@@ -56,7 +76,7 @@ body {
   }
 }
 </style>
-  <body>
+
 
 
 <h3></h3>
@@ -65,12 +85,18 @@ body {
 <br>
 <br>
 
-<h1>    Must Love dogs</h1>
-<h2>    We love your dog as much as you do!!</h2>
-<p></p>
 
+<p style = "font-family:Arial, Helvetica, sans-serif;font-size:100px; color:MediumSeaGreen;font-style:bold;background:lightgreen;">
+    Must Love Dogs</p><p> <iframe src="https://giphy.com/embed/4Zo41lhzKt6iZ8xff9" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/4Zo41lhzKt6iZ8xff9">via GIPHY</a></p>
+<p style = "font-family:georgia,garamond,serif;font-size:30px;font-style:italic;background:lightgreen;">
+
+
+We love your dog as much as you do!!
+</p>
+
+<header>
 <div class="header">
-  <h3>Login</h3>
+  <h5>Login</h5>
   <% if flash[:unauthenticated] %>
     <p style="color:red;"><%= flash[:unauthenticated] %></p>
   <% end %>
@@ -83,16 +109,29 @@ body {
 
     <%= submit_tag "Log in" %>
   <% end %>
-</div>
 
+  <p> New User? sign up here </p>
+
+
+</header>
+  <body>
 <div class="row">
-  <div class="column" style="background-color:#aaa;">Dog Walking <br>30 min<br>
-</div>
-  <div class="column" style="background-color:#bbb;">Dog Walking<br>1 hour</div>
-  <div class="column" style="background-color:#ccc;">Dog Boarding</div>
-  <div class="column" style="background-color:#ddd;">Dog Transport</div>
-  <div class="column" style="background-color:#eee;">Dog Grooming</div>
-</div>
+  <div class="column" style="background-color:#bbb;">Dog Walking <br>30 min<br><br>
+    <div id="box"><img src="sessions/walk1.jpeg"  height="42" width="42">
+    </div></div>
+  <div class="column" style="background-color:#ddd;">Dog Walking<br>1 hour<br><br>
+    <div id="box" >
+    </div></div>
+  <div class="column" style="background-color:#ccc;">Dog Boarding<br><br><br>
+    <div id="box">
+    </div></div>
+  <div class="column" style="background-color:#ddd;">Dog Transport<br><br><br>
+    <div id="box">
+    </div></div>
+  <div class="column" style="background-color:#bbb;">Dog Grooming<br><br><br>
+
+  <div id="box">
+  </div></div>
 
 <div class="footer">
   <p>contact us: Shari @flatiron  or Gabbie @flatiron</p>
