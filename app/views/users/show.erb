@@ -1,39 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <title>Login</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color:  seagreen;
+  font-size: 25px;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: left;
+  font-size: 10px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  /*float: left;*/
+  width: 20%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+  border: 2px solid green;
+  border-radius: 12px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: right;
+  font-size: 10px;
+}
+#box{
+    display: block;
+    margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+    height: 50%;
+    background:#f1f1f1;
+    border: 2px solid green;
+    border-radius: 12px;
+
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 
-<h1>Our Valued Client:</h1>
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+
+
+<div><div id="box">
+
+  <p style = "font-family:Arial, Helvetica, sans-serif;font-size:100px; color:MediumSeaGreen;font-style:bold;background:lightgreen;">
+    <h1>Our Valued Client:</h1></p
+
 
 <ul>
-  <li>Name:  <%= @user.full_name %></li>
-  <li>Email:  <%= @user.email %></li>
-  <li>Phone Number:  <%=number_to_phone(@user.phone_number) %></li>
-  <li>Neighborhood:  <%= @user.neighborhood %></li>
-  <li>User ID:  <%= @user.id %></li>
 
+  Name:  <%= @user.full_name %><br>
+  Email:  <%= @user.email %><br>
+  Phone Number:  <%=number_to_phone(@user.phone_number) %><br>
+  Neighborhood:  <%= @user.neighborhood %><br>
+  User ID:  <%= @user.id %><br>
+  </ul>
+</div></div>
 
-
+<div><div id="box">
   <%= link_to "update", edit_user_path(@user) %>
   <%= button_to "delete", @user, method: 'delete' %>
 
-
-</ul>
-
-
-<p> Add A New Dog for this client: </p>
+Add A New Dog for this client:
 <%=link_to "add new dog", new_dog_path(@dog)%>
-
-
-
-<p>
-
-
-<p> Make a service appointment for your dog<br><br>
-<%=link_to "30m walk", new30mwalk_path%><br>
-<%=link_to "1hr Walk", new1hrwalk_path%><br>
-<%=link_to "Overnight Stay", newovernight_path%><br>
-<%=link_to "Grooming", newgrooming_path%><br>
-<%=link_to "Trip to the Vet", newvet_path%><br>
 <br><br>
+</div></div>
 
+
+
+
+<div><div id="box">
 <h2> This Client's Dog(s):</h2>
 <ul>
     <% @dogs.each do |dog| %>
@@ -44,13 +118,14 @@
       <% end %><br>
     <% end %>
 </ul>
+</div></div>
 
-
-
-<p> Make a service appointment for your dog<br><br>
+<div><div id="box">
+<h2>Make a service appointment for your dog</h2>
 <%=link_to "30m walk", new30mwalk_path%><br>
 <%=link_to "1hr Walk", new1hrwalk_path%><br>
 <%=link_to "Overnight Stay", newovernight_path%><br>
 <%=link_to "Grooming", newgrooming_path%><br>
 <%=link_to "Trip to the Vet", newvet_path%><br>
-<br><br>
+
+</div></div>

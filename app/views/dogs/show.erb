@@ -1,24 +1,111 @@
-<h1> Who's a good dog??? </h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <title>Login</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color:  seagreen;
+  font-size: 25px;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: left;
+  font-size: 10px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  /*float: left;*/
+  width: 20%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+  border: 2px solid green;
+  border-radius: 12px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: right;
+  font-size: 10px;
+}
+#box{
+    display: block;
+    margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+    height: 50%;
+    background:#f1f1f1;
+    border: 2px solid green;
+    border-radius: 12px;
+
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+<div><div id="box">
+<h1> Who's a good dog??? </h1>
+</div>
+<div><div id="box">
 <ul>
-  <li><b>Name: </b><%= @dog.name %></li>
-  <li><b>Age: </b><%= @dog.age %></li>
-  <li><b>Size: </b><%= @dog.size %></li>
-  <li><b>Veterinarian Name: </b><%= @dog.vet_name %></li>
-  <li><b>Food: </b><%= @dog.food_name %></li>
-  <li><b>Owner: </b><%=@dog.user.full_name %></li>
+  <b>Name: </b><%= @dog.name %><br>
+  <b>Age: </b><%= @dog.age %><br>
+  <b>Size: </b><%= @dog.size %><br>
+  <b>Veterinarian Name: </b><%= @dog.vet_name %><br>
+  <b>Food: </b><%= @dog.food_name %><br>
+  <b>Owner: </b><%=@dog.user.full_name %><br>
 
   <img src=<%= @dog.img_url%> >
   </ul>
-
+</div>
+<div><div id="box">
 <h2> Appointments </h2>
 <ul>
   <% @appointments.each do |a| %>
-  <li><%= a.find_caregiver.name + " - " + a.find_service.name%> </li>
+  <%= a.find_caregiver.name + " - " + a.find_service.name%>
   <% end %>
 </ul>
-
-
+</div>
+<div><div id="box">
 <%= link_to "back to owner", user_path(@dog.user) %><br>
+</div>
+<div><div id="box">
 <%= link_to "update", edit_dog_path(@dog) %><br>
+</div>
+<div><div id="box">
 <%= button_to "delete", @dog, method: 'delete' %>
+</div>
