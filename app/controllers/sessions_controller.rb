@@ -2,6 +2,11 @@ class SessionsController < ApplicationController
   skip_before_action :authorize, only: [:login, :create]
 
   def login
+    @halfhrwalk = Service.find_by(id: 1)
+    @hrwalk = Service.find_by(id: 2)
+    @overnight = Service.find_by(id: 3)
+    @groom = Service.find_by(id: 4)
+    @vet = Service.find_by(id: 5)
   end
 
   def create
@@ -18,5 +23,5 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
   end
-  
+
 end
