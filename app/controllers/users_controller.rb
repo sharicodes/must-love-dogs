@@ -47,6 +47,11 @@ class UsersController < ApplicationController
     @user.dogs << Dog.create
   end
 
+  # def logout
+  #   session[:user_id].delete
+  #   redirect_to 
+  # end
+
   private
 
   def user_params

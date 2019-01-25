@@ -1,12 +1,12 @@
 <h1> Who's a good dog??? </h1>
 
 <ul>
-  <li>Name:..<%= @dog.name %></li>
-  <li>Age:..<%= @dog.age %></li>
-  <li>Size:..<%= @dog.size %></li>
-  <li>Veterinarian Name:..<%= @dog.vet_name %></li>
-  <li>Food:..<%= @dog.food_name %></li>
-  <li>Owner:..<%=@dog.user.full_name %></li>
+  <li><b>Name: </b><%= @dog.name %></li>
+  <li><b>Age: </b><%= @dog.age %></li>
+  <li><b>Size: </b><%= @dog.size %></li>
+  <li><b>Veterinarian Name: </b><%= @dog.vet_name %></li>
+  <li><b>Food: </b><%= @dog.food_name %></li>
+  <li><b>Owner: </b><%=@dog.user.full_name %></li>
 
   <img src=<%= @dog.img_url%> >
   </ul>
@@ -15,12 +15,10 @@
 <ul>
   <% @appointments.each do |a| %>
   <li><%= a.find_caregiver.name + " - " + a.find_service.name%> </li>
-  <% end %> 
+  <% end %>
 </ul>
 
 
 <%= link_to "back to owner", user_path(@dog.user) %><br>
 <%= link_to "update", edit_dog_path(@dog) %><br>
-<%= link_to "make a service appointment", new_appointment_path(@dog) %>
-
 <%= button_to "delete", @dog, method: 'delete' %>

@@ -3,8 +3,8 @@
 <ul>
    <% @dogs.each do |d| %>
    <li><%= link_to d.name, dog_path(d)  %>
-     <%= button_to "delete", @dog, method: 'delete' %>
-
+     <%= button_to('Delete', dog_path(d),
+               method: "delete", remote: true, data: { confirm: 'Are you sure?', disable_with: 'loading...' }) %>
  </li><br>
    <% end %>
 </ul>
