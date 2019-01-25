@@ -8,7 +8,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
-  def new
+  def new_30m_walk
     session[:service_id] = 1
     @appointment = Appointment.new
     id = session[:user_id]
@@ -16,6 +16,51 @@ class AppointmentsController < ApplicationController
     @dogs = @user.dogs
     @service = Service.first
     @caregivers = @service.halfwalk_caregivers
+    render "new"
+  end
+
+  def new_1hr_walk
+    session[:service_id] = 2
+    @appointment = Appointment.new
+    id = session[:user_id]
+    @user = User.find_by(id: id)
+    @dogs = @user.dogs
+    @service = Service.second
+    @caregivers = @service.fullwalk_caregivers
+    render "new"
+  end
+
+  def new_overnight
+    session[:service_id] = 3
+    @appointment = Appointment.new
+    id = session[:user_id]
+    @user = User.find_by(id: id)
+    @dogs = @user.dogs
+    @service = Service.third
+    @caregivers = @service.dogsit_caregivers
+      render "new"
+  end
+
+  def new_grooming
+    session[:service_id] = 4
+    @appointment = Appointment.new
+    id = session[:user_id]
+    @user = User.find_by(id: id)
+    @dogs = @user.dogs
+    @service = Service.fourth
+    @caregivers = @service.grooming_caregivers
+    render "new"
+  end
+
+  def new_vet
+    session[:service_id] = 5
+    @appointment = Appointment.new
+    id = session[:user_id]
+    @user = User.find_by(id: id)
+    @dogs = @user.dogs
+    @service = Service.fifth
+    @caregivers = @service.vet_caregivers
+    render "new"
   end
 
   def create

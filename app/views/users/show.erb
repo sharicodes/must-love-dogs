@@ -1,3 +1,5 @@
+
+
 <h1>Our Valued Client:</h1>
 
 <ul>
@@ -5,32 +7,39 @@
   <li>Email:  <%= @user.email %></li>
   <li>Phone Number:  <%=number_to_phone(@user.phone_number) %></li>
   <li>Neighborhood:  <%= @user.neighborhood %></li>
-  <li>User ID:  <%= @user.id %></li><br>
+  <li>User ID:  <%= @user.id %></li>
+
+
+
+  <%= link_to "update", edit_user_path(@user) %>
+  <%= button_to "delete", @user, method: 'delete' %>
+
+
 </ul>
-  <%= link_to "Update Your Profile", edit_user_path(@user) %><br>
-  <%= button_to "Delete Your Account", @user, method: 'delete' %>
+
+
+<p> Add A New Dog for this client: </p>
+<%=link_to "add new dog", new_dog_path(@dog)%>
+
 
 
 <h2> This Client's Dog(s):</h2>
 <ul>
     <% @dogs.each do |dog| %>
     <b>Dog:  </b><%=link_to dog.name, dog_path(dog) %><br>
-    <b>Appointments:</b><br> <% @appointments = dog.appointments %>
-    <% @appointments.each do |a| %>
-      <%= a.find_caregiver.name + " - " + a.find_service.name %><br>
-    <% end %><br>
+    <h3>This Dog's Appointments:</h3>
+      <% dog.appointments.each do |appointment| %>
+      <%= "Appointment for a #{appointment.find_service.name} with #{appointment.find_caregiver.name}" %><br>
+      <% end %><br>
     <% end %>
 </ul>
 
 
-<h2> Add A New Dog to this Account: </h2>
-<%=link_to "add new dog", new_dog_path(@dog)%>
 
-
-<h2> Make a service appointment for your dog</h2>
-<%=link_to "30m walk", new_appointment_path%><br>
-<%=link_to "1hr Walk", new_appointment_path%><br>
-<%=link_to "Overnight Stay", new_appointment_path%><br>
-<%=link_to "Grooming", new_appointment_path%><br>
-<%=link_to "Trip to the Vet", new_appointment_path%><br>
+<p> Make a service appointment for your dog<br><br>
+<%=link_to "30m walk", new30mwalk_path%><br>
+<%=link_to "1hr Walk", new1hrwalk_path%><br>
+<%=link_to "Overnight Stay", newovernight_path%><br>
+<%=link_to "Grooming", newgrooming_path%><br>
+<%=link_to "Trip to the Vet", newvet_path%><br>
 <br><br>
