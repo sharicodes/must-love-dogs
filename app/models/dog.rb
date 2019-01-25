@@ -1,7 +1,8 @@
 class Dog < ApplicationRecord
   belongs_to :user
-  has_many :appointments
-  has_many :careservices, through: :appointments
+  has_many :appointments, dependent: :destroy
+  has_many :caregivers, through: :appointments
+  has_many :services, through: :appointments
 
   validates :name, presence: true
   validates :age, numericality: true

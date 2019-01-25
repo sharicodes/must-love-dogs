@@ -16,6 +16,11 @@ Rails.application.routes.draw do
     post '/sessions', to: "sessions#create"
     #get '/logout', to: "sessions#destroy"  as: "logout"
 
+    get 'new30mwalk', to: "appointments#new_30m_walk", as: "new30mwalk"
+    get 'new1hrwalk', to: "appointments#new_1hr_walk", as: "new1hrwalk"
+    get 'newovernight', to: "appointments#new_overnight", as: "newovernight"
+    get 'newgrooming', to: "appointments#new_grooming", as: "newgrooming"
+    get 'newvet', to: "appointments#new_vet", as: "newvet"
 
   end
 

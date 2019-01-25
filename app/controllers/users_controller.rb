@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   before_action :authorize, only: [:show, :new]
+<<<<<<< HEAD
+=======
+
+>>>>>>> relationships
 
   def index
     @users = User.all
@@ -47,6 +51,11 @@ class UsersController < ApplicationController
   def add_dog
     @user.dogs << Dog.create
   end
+
+  # def logout
+  #   session[:user_id].delete
+  #   redirect_to 
+  # end
 
   private
 

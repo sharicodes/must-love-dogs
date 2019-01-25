@@ -27,11 +27,11 @@
 
 
 <p> Make a service appointment for your dog<br><br>
-<%=link_to "30m walk", new_careservice_path%><br>
-<%=link_to "1hr Walk", new_careservice_path%><br>
-<%=link_to "Overnight Stay", new_careservice_path%><br>
-<%=link_to "Grooming", new_careservice_path%><br>
-<%=link_to "Trip to the Vet", new_careservice_path%><br>
+<%=link_to "30m walk", new30mwalk_path%><br>
+<%=link_to "1hr Walk", new1hrwalk_path%><br>
+<%=link_to "Overnight Stay", newovernight_path%><br>
+<%=link_to "Grooming", newgrooming_path%><br>
+<%=link_to "Trip to the Vet", newvet_path%><br>
 <br><br>
 
 <h2> This Client's Dog(s):</h2>
@@ -40,9 +40,17 @@
     <b>Dog:  </b><%=link_to dog.name, dog_path(dog) %><br>
     <h3>This Dog's Appointments:</h3>
       <% dog.appointments.each do |appointment| %>
-        <h4>This Dog's Appointments: </b><%= "Appointment for a #{appointment.careservice.service.name} with #{appointment.careservice.caregiver.name}" %></h4>
-      <% end %>
+      <%= "Appointment for a #{appointment.find_service.name} with #{appointment.find_caregiver.name}" %><br>
+      <% end %><br>
     <% end %>
 </ul>
 
-</p>
+
+
+<p> Make a service appointment for your dog<br><br>
+<%=link_to "30m walk", new30mwalk_path%><br>
+<%=link_to "1hr Walk", new1hrwalk_path%><br>
+<%=link_to "Overnight Stay", newovernight_path%><br>
+<%=link_to "Grooming", newgrooming_path%><br>
+<%=link_to "Trip to the Vet", newvet_path%><br>
+<br><br>
