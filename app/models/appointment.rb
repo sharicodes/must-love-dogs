@@ -1,8 +1,5 @@
 class Appointment < ApplicationRecord
   belongs_to :dog
-<<<<<<< HEAD
-  belongs_to :careservice
-=======
   belongs_to :caregiver
   belongs_to :service
 
@@ -21,5 +18,4 @@ def find_service
   Service.all.find_by(id: id)
 end
 
->>>>>>> relationships
 end

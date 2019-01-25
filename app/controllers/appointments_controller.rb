@@ -4,28 +4,6 @@ class AppointmentsController < ApplicationController
     @appointments = Appointment.all
   end
 
-<<<<<<< HEAD
-    def new
-      @appointment = Appointment.new
-      id = session[:user_id]
-      @user = User.find_by(id: id)
-      # byebug
-      @dogs = @user.dogs
-      @dog = # we need a dog_id to give to appointment
-      @careservice = # we need the corresponding careservice_id
-                    # might be Careservice.last.id
-    end
-
-    def create
-      @appointment = Appointment.create(appointment_params(:dog_id, :careservice_id))
-      id = session[:user_id]
-      @user = User.find_by(id: id)
-      @dogs = @user.dogs
-      @service = Service.first
-      @caregivers = @service.halfwalk_caregivers
-      redirect_to user_path(@user)
-    end
-=======
   def show
     @appointment = Appointment.find(params[:id])
   end
@@ -40,15 +18,13 @@ class AppointmentsController < ApplicationController
     @caregivers = @service.halfwalk_caregivers
     render "new"
   end
->>>>>>> relationships
 
   def new_1hr_walk
     session[:service_id] = 2
     @appointment = Appointment.new
     id = session[:user_id]
     @user = User.find_by(id: id)
-    @dogs = @user.dogs
-    @service = Service.second
+    @dogs = @user.dogs    @service = Service.second
     @caregivers = @service.fullwalk_caregivers
     render "new"
   end
@@ -81,8 +57,8 @@ class AppointmentsController < ApplicationController
     id = session[:user_id]
     @user = User.find_by(id: id)
     @dogs = @user.dogs
-    @service = Service.fifth
-    @caregivers = @service.vet_caregivers
+    @service = Service.fourth
+    @caregivers = @service.grooming_caregivers
     render "new"
   end
 

@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorize, only: [:show, :new]
-<<<<<<< HEAD
-=======
 
->>>>>>> relationships
 
   def index
     @users = User.all
@@ -45,7 +42,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to users_path
-    
+
   end
 
   def add_dog
@@ -54,7 +51,7 @@ class UsersController < ApplicationController
 
   # def logout
   #   session[:user_id].delete
-  #   redirect_to 
+  #   redirect_to
   # end
 
   private
