@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get 'newovernight', to: "appointments#new_overnight", as: "newovernight"
     get 'newgrooming', to: "appointments#new_grooming", as: "newgrooming"
     get 'newvet', to: "appointments#new_vet", as: "newvet"
+    delete 'logout', to: "sessions#destroy"
 
   end
 

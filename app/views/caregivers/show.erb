@@ -83,7 +83,7 @@ img {
 </div>
 
 <div id="box">
-<ul> Bio: <%=@caregiver.bio %> <br><br>
+<ul> Bio: <%=@caregiver.bio %> <br>
 Neighborhood: <%=@caregiver.neighborhood %> <br><br>
 <img src=<%=@caregiver.picture_url%>> <br></ul>
 </div>
@@ -95,11 +95,16 @@ Services You Provide:<br> <%@caregiver.services.each do |s| %>
 </div>
 
 <br>
+  <% if session[:user_id] == @caregiver.id %>
 <div id="box">
+
 <%=link_to "Update Your Profile or Services", edit_caregiver_path %>
 </div>
 
 <div id="box">
 <%= button_to('Delete Account', caregiver_path(@caregiver),
           method: "delete", remote: true, data: { confirm: 'Are you sure?', disable_with: 'loading...' }) %>
+
+
 </div>
+<% end %>   

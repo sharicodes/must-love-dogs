@@ -13,7 +13,6 @@ class DogsController < ApplicationController
     end
 
   def create
-    byebug
     @dog = Dog.create(dog_params)
     if @dog.valid?
       redirect_to dog_path(@dog)

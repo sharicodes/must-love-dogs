@@ -84,11 +84,7 @@ img {
 <%= form_for @appointment do |f| %>
 <%= f.hidden_field :service_id, :value => session[:service_id] %>
 Choose Your Dog...   <%=f.collection_select :dog_id, @dogs, :id, :name %> <br>
-</div>
-<div><div id="box">
 Choose Your Caregiver... <%= f.collection_select :caregiver_id, @caregivers, :id, :name %> <br>
-</div>
-<div><div id="box">
 <%=f.submit%>
   <%end%>
   </div>

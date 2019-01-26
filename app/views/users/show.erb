@@ -91,7 +91,6 @@ img {
   Email:  <%= @user.email %><br>
   Phone Number:  <%=number_to_phone(@user.phone_number) %><br>
   Neighborhood:  <%= @user.neighborhood %><br>
-  User ID:  <%= @user.id %><br>
   </ul>
 </div></div>
 
@@ -114,7 +113,7 @@ Add A New Dog for this client:
     <b>Dog:  </b><%=link_to dog.name, dog_path(dog) %><br>
     <h3>This Dog's Appointments:</h3>
       <% dog.appointments.each do |appointment| %>
-      <%= "Appointment for a #{appointment.find_service.name} with #{appointment.find_caregiver.name}" %><br>
+      Appointment for a <%= link_to appointment.find_service.name, service_path(appointment.service) %> with <%= link_to appointment.find_caregiver.name, caregiver_path(appointment.caregiver) %><br>
       <% end %><br>
     <% end %>
 </ul>
@@ -129,3 +128,4 @@ Add A New Dog for this client:
 <%=link_to "Trip to the Vet", newvet_path%><br>
 
 </div></div>
+<%= link_to "Log out", logout_path, method: :delete %>
