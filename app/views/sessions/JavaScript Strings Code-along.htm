@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <title>JavaScript Strings Code-along</title>
+    <meta name="description" content="Introduction to JavaScript strings in the Learn.co curriculum">
+    <meta name="author" content="Flatiron School">
+
+    <!-- Include Mocha's stylesheet to style test results. -->
+    <link rel="stylesheet" href="./JavaScript Strings Code-along_files/mocha.css">
+  </head>
+
+  <body><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+//]]></script><script async="" src="./JavaScript Strings Code-along_files/browser-sync-client.js"></script>
+
+    <!-- <div> for Mocha to display test results. -->
+    <div id="mocha"><ul id="mocha-stats"><li class="progress"><canvas width="50" height="50"></canvas></li><li class="passes"><a href="javascript:void(0);">passes:</a> <em>0</em></li><li class="failures"><a href="javascript:void(0);">failures:</a> <em>10</em></li><li class="duration">duration: <em>0.20</em>s</li></ul><ul id="mocha-report"><li class="suite"><h1><a href="http://localhost:8000/?grep=index%5C.js">index.js</a></h1><ul><li class="suite"><h1><a href="http://localhost:8000/?grep=index%5C.js%20currentUser">currentUser</a></h1><ul><li class="test fail"><h2>is defined <a href="http://localhost:8000/?grep=index%5C.js%20currentUser%20is%20defined" class="replay">‣</a></h2><pre class="error">ReferenceError: currentUser is not defined
+    at Context.it (test/indexTest.js:6:14)</pre><pre style="display: none;"><code>expect(currentUser, "The <span class="string">'currentUser'</span> variable must contain a string").to.be.a(<span class="string">'string'</span>);
+expect(currentUser, "You need to modify the value of the <span class="string">'currentUser'</span> variable").to.not.be.empty;</code></pre></li></ul></li><li class="suite"><h1><a href="http://localhost:8000/?grep=index%5C.js%20welcomeMessage">welcomeMessage</a></h1><ul><li class="test fail"><h2>contains "Welcome to Flatbook, " <a href="http://localhost:8000/?grep=index%5C.js%20welcomeMessage%20contains%20%22Welcome%20to%20Flatbook%2C%20%22" class="replay">‣</a></h2><pre class="error">ReferenceError: welcomeMessage is not defined
+    at Context.it (test/indexTest.js:13:14)</pre><pre style="display: none;"><code>expect(welcomeMessage).to.have.string(<span class="string">'Welcome to Flatbook, '</span>);</code></pre></li><li class="test fail"><h2>contains the value of the 'currentUser' variable <a href="http://localhost:8000/?grep=index%5C.js%20welcomeMessage%20contains%20the%20value%20of%20the%20%27currentUser%27%20variable" class="replay">‣</a></h2><pre class="error">ReferenceError: welcomeMessage is not defined
+    at Context.it (test/indexTest.js:17:14)</pre><pre style="display: none;"><code>expect(welcomeMessage).to.have.string(currentUser);</code></pre></li><li class="test fail"><h2>ends with an exclamation point! <a href="http://localhost:8000/?grep=index%5C.js%20welcomeMessage%20ends%20with%20an%20exclamation%20point!" class="replay">‣</a></h2><pre class="error">ReferenceError: welcomeMessage is not defined
+    at Context.it (test/indexTest.js:21:14)</pre><pre style="display: none;"><code>expect(welcomeMessage.substr(-<span class="number">1</span>)).to.eq(<span class="string">'!'</span>);</code></pre></li></ul></li><li class="suite"><h1><a href="http://localhost:8000/?grep=index%5C.js%20excitedWelcomeMessage">excitedWelcomeMessage</a></h1><ul><li class="test fail"><h2>contains "WELCOME TO FLATBOOK, " <a href="http://localhost:8000/?grep=index%5C.js%20excitedWelcomeMessage%20contains%20%22WELCOME%20TO%20FLATBOOK%2C%20%22" class="replay">‣</a></h2><pre class="error">ReferenceError: excitedWelcomeMessage is not defined
+    at Context.it (test/indexTest.js:27:14)</pre><pre style="display: none;"><code>expect(excitedWelcomeMessage).to.have.string(<span class="string">'WELCOME TO FLATBOOK, '</span>);</code></pre></li><li class="test fail"><h2>contains the value of the 'currentUser' variable <a href="http://localhost:8000/?grep=index%5C.js%20excitedWelcomeMessage%20contains%20the%20value%20of%20the%20%27currentUser%27%20variable" class="replay">‣</a></h2><pre class="error">ReferenceError: currentUser is not defined
+    at Context.it (test/indexTest.js:31:36)</pre><pre style="display: none;"><code>const upperCaseCurrentUser = currentUser.toUpperCase();
+expect(excitedWelcomeMessage).to.have.string(upperCaseCurrentUser);</code></pre></li><li class="test fail"><h2>ends with an exclamation point <a href="http://localhost:8000/?grep=index%5C.js%20excitedWelcomeMessage%20ends%20with%20an%20exclamation%20point" class="replay">‣</a></h2><pre class="error">ReferenceError: excitedWelcomeMessage is not defined
+    at Context.it (test/indexTest.js:37:14)</pre><pre style="display: none;"><code>expect(excitedWelcomeMessage.substr(-<span class="number">1</span>)).to.eq(<span class="string">'!'</span>);</code></pre></li></ul></li><li class="suite"><h1><a href="http://localhost:8000/?grep=index%5C.js%20shortGreeting">shortGreeting</a></h1><ul><li class="test fail"><h2>contains "Welcome, " <a href="http://localhost:8000/?grep=index%5C.js%20shortGreeting%20contains%20%22Welcome%2C%20%22" class="replay">‣</a></h2><pre class="error">ReferenceError: shortGreeting is not defined
+    at Context.it (test/indexTest.js:43:14)</pre><pre style="display: none;"><code>expect(shortGreeting).to.have.string(<span class="string">'Welcome, '</span>);</code></pre></li><li class="test fail"><h2>contains the first initial of the name stored in the 'currentUser' variable <a href="http://localhost:8000/?grep=index%5C.js%20shortGreeting%20contains%20the%20first%20initial%20of%20the%20name%20stored%20in%20the%20%27currentUser%27%20variable" class="replay">‣</a></h2><pre class="error">ReferenceError: currentUser is not defined
+    at Context.it (test/indexTest.js:47:28)</pre><pre style="display: none;"><code>const firstInitial = currentUser[<span class="number">0</span>];
+const restOfName = currentUser.slice(<span class="number">1</span>);
+expect(shortGreeting).to.have.string(firstInitial);
+expect(shortGreeting).to.not.have.string(restOfName);</code></pre></li><li class="test fail"><h2>ends with an exclamation point <a href="http://localhost:8000/?grep=index%5C.js%20shortGreeting%20ends%20with%20an%20exclamation%20point" class="replay">‣</a></h2><pre class="error">ReferenceError: shortGreeting is not defined
+    at Context.it (test/indexTest.js:55:14)</pre><pre style="display: none;"><code>expect(shortGreeting.substr(-<span class="number">1</span>)).to.eq(<span class="string">'!'</span>);</code></pre></li></ul></li></ul></li></ul></div>
+
+    <!-- Include Mocha and set it up for BDD-style testing. -->
+    <script src="./JavaScript Strings Code-along_files/mocha.js"></script>
+    <script>mocha.setup('bdd');</script>
+
+    <!-- Include Chai as the matcher library. -->
+    <script src="./JavaScript Strings Code-along_files/chai.js"></script>
+
+    <!-- Include the student's JavaScript file(s). -->
+    <script src="./JavaScript Strings Code-along_files/index.js"></script>
+
+    <!-- Include the JavaScript file(s) containing the tests. -->
+    <script src="./JavaScript Strings Code-along_files/indexTest.js"></script>
+
+    <!-- Include Flatiron School's minified test runner to push results to Learn. -->
+    <script src="./JavaScript Strings Code-along_files/learnBrowser.min.js"></script>
+  
+
+</body></html>
